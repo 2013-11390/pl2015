@@ -1,0 +1,14 @@
+DIGEST e27d075d238a1d32493c14578a740072
+FAssignment06_01
+R15:29 Assignment06_00 <> <> lib
+prf 222:236 <> dist_not_exists
+R261:261 Assignment06_01 <> X var
+R294:296 Logic <> :type_scope:'~'_x not
+R312:312 Logic <> :type_scope:'~'_x not
+R297:303 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R305:306 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R307:308 Logic <> :type_scope:'~'_x not
+R309:309 Assignment06_01 <> P var
+R286:286 Assignment06_01 <> P var
+R288:288 Assignment06_01 <> x var
+R341:343 Logic <> not def

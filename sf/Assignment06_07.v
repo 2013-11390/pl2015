@@ -14,9 +14,17 @@ Require Export Assignment06_06.
     predicate in the exercise above; the sequence [1;4;1] repeats but
     does not stutter.) *)
 
-Inductive nostutter:  list nat -> Prop :=
- (* FILL IN HERE *)
+
+Inductive top_not_x : nat -> list nat -> Prop :=
+  | tn_empty : forall n:nat, top_not_x n []
+  | tn_top   : forall (n:nat) (m:nat) (l:list nat), n <> m -> top_not_x n (m :: l)
 .
+
+
+Inductive nostutter:  list nat -> Prop :=
+  | tutter_empty : nostutter []
+  | tutter_top :  forall (n:nat) (l:list nat), top_not_x n l /\ nostutter l -> nostutter (n::l).
+
 
 (** Make sure each of these tests succeeds, but you are free
     to change the proof if the given one doesn't work for you.
@@ -31,32 +39,37 @@ Inductive nostutter:  list nat -> Prop :=
     tactics.  *)
 
 Example test_nostutter_1:      nostutter [3;1;4;1;5;6].
-(* FILL IN HERE *) Admitted.
-(* 
-  Proof. repeat constructor; apply beq_nat_false; auto. Qed.
-*)
+Proof.
+  repeat constructor.
+  apply beq_nat_false.
+  auto.
+apply beq_nat_false.
+  auto.
+apply beq_nat_false.
+  auto.
+apply beq_nat_false.
+  auto.
+apply beq_nat_false.
+  auto.
+Qed.  
 
 Example test_nostutter_2:  nostutter [].
-(* FILL IN HERE *) Admitted.
-(* 
-  Proof. repeat constructor; apply beq_nat_false; auto. Qed.
-*)
+Proof. repeat constructor; apply beq_nat_false; auto. Qed.
+
 
 Example test_nostutter_3:  nostutter [5].
-(* FILL IN HERE *) Admitted.
-(* 
   Proof. repeat constructor; apply beq_nat_false; auto. Qed.
-*)
 
 Example test_nostutter_4:      not (nostutter [3;1;1;4]).
-(* FILL IN HERE *) Admitted.
-(* 
-  Proof. intro.
-  repeat match goal with 
-    h: nostutter _ |- _ => inversion h; clear h; subst 
-  end.
-  contradiction H1; auto. Qed.
-*)
-(** [] *)
-
-
+Proof.
+  unfold not.
+  intros.
+  inversion H.
+  inversion H1.
+  inversion H4.
+  inversion H6.
+  inversion H8.
+  subst.
+  apply H12.
+  reflexivity.
+Qed.

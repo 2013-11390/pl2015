@@ -1,0 +1,53 @@
+DIGEST b1371a40c16b40e6e8c70b55d0173462
+FAssignment06_06
+R15:29 Assignment06_05 <> <> lib
+ind 184:193 <> appears_in
+constr 234:240 <> ai_here
+constr 278:285 <> ai_later
+R207:207 Assignment06_06 <> X var
+R212:215 Poly <> list ind
+R254:263 Assignment06_06 <> appears_in ind
+R269:270 Poly <> ::x_'::'_x not
+R271:271 Assignment06_06 <> l var
+R319:328 Assignment06_06 <> appears_in ind
+R334:335 Poly <> ::x_'::'_x not
+R333:333 Assignment06_06 <> b var
+R336:336 Assignment06_06 <> l var
+R301:310 Assignment06_06 <> appears_in ind
+R314:314 Assignment06_06 <> l var
+prf 513:526 <> appears_in_app
+R555:558 Poly <> list ind
+R560:560 Assignment06_06 <> X var
+R566:566 Assignment06_06 <> X var
+R618:621 Logic <> :type_scope:x_'\/'_x not
+R603:612 Assignment06_06 <> appears_in ind
+R616:617 Assignment06_06 <> xs var
+R614:614 Assignment06_06 <> x var
+R622:631 Assignment06_06 <> appears_in ind
+R635:636 Assignment06_06 <> ys var
+R633:633 Assignment06_06 <> x var
+R576:585 Assignment06_06 <> appears_in ind
+R592:595 Poly <> ::x_'++'_x not
+R590:591 Assignment06_06 <> xs var
+R596:597 Assignment06_06 <> ys var
+R587:587 Assignment06_06 <> x var
+R746:752 Assignment06_06 <> ai_here constr
+R746:752 Assignment06_06 <> ai_here constr
+R806:813 Assignment06_06 <> ai_later constr
+R806:813 Assignment06_06 <> ai_later constr
+prf 861:874 <> app_appears_in
+R903:906 Poly <> list ind
+R908:908 Assignment06_06 <> X var
+R914:914 Assignment06_06 <> X var
+R962:971 Assignment06_06 <> appears_in ind
+R978:981 Poly <> ::x_'++'_x not
+R976:977 Assignment06_06 <> xs var
+R982:983 Assignment06_06 <> ys var
+R973:973 Assignment06_06 <> x var
+R939:942 Logic <> :type_scope:x_'\/'_x not
+R924:933 Assignment06_06 <> appears_in ind
+R937:938 Assignment06_06 <> xs var
+R935:935 Assignment06_06 <> x var
+R943:952 Assignment06_06 <> appears_in ind
+R956:957 Assignment06_06 <> ys var
+R954:954 Assignment06_06 <> x var

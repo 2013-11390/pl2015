@@ -1,0 +1,23 @@
+DIGEST 3744a10e689538e59fc2293d6523cf31
+FAssignment06_04
+R15:29 Assignment06_03 <> <> lib
+prf 120:135 <> override_shadow'
+R177:177 Assignment06_04 <> X var
+R172:174 Coq.Init.Datatypes <> nat ind
+R223:225 Coq.Init.Logic <> :type_scope:x_'='_x not
+R184:192 Assignment06_00 <> override' def
+R217:218 Assignment06_04 <> x1 var
+R214:215 Assignment06_04 <> k1 var
+R195:203 Assignment06_00 <> override' def
+R210:211 Assignment06_04 <> x2 var
+R207:208 Assignment06_04 <> k1 var
+R205:205 Assignment06_04 <> f var
+R221:222 Assignment06_04 <> k2 var
+R227:235 Assignment06_00 <> override' def
+R242:243 Assignment06_04 <> x1 var
+R239:240 Assignment06_04 <> k1 var
+R237:237 Assignment06_04 <> f var
+R246:247 Assignment06_04 <> k2 var
+R276:284 Assignment06_00 <> override' def
+R299:308 Assignment06_00 <> eq_nat_dec thm
+R299:308 Assignment06_00 <> eq_nat_dec thm

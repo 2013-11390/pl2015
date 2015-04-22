@@ -1,0 +1,21 @@
+DIGEST 07b994f133e1ed361b361e5b943c033f
+FAssignment06_03
+R15:29 Assignment06_02 <> <> lib
+prf 199:212 <> dist_exists_or
+R239:239 Assignment06_03 <> X var
+R253:253 Logic <> :type_scope:x_'<->'_x not
+R274:279 Logic <> :type_scope:x_'<->'_x not
+R254:260 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R262:263 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R267:270 Logic <> :type_scope:x_'\/'_x not
+R264:264 Assignment06_03 <> P var
+R271:271 Assignment06_03 <> Q var
+R280:280 Logic <> :type_scope:x_'\/'_x not
+R294:299 Logic <> :type_scope:x_'\/'_x not
+R313:313 Logic <> :type_scope:x_'\/'_x not
+R281:287 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R289:290 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R291:291 Assignment06_03 <> P var
+R300:306 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R308:309 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R310:310 Assignment06_03 <> Q var

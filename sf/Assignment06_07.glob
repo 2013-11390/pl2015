@@ -1,0 +1,82 @@
+DIGEST 0807a852d3cad445aa25620f45226b57
+FAssignment06_07
+R15:29 Assignment06_06 <> <> lib
+ind 648:656 <> top_not_x
+constr 691:698 <> tn_empty
+constr 735:740 <> tn_top
+R667:670 Poly <> list ind
+R672:674 Coq.Init.Datatypes <> nat ind
+R660:662 Coq.Init.Datatypes <> nat ind
+R711:713 Coq.Init.Datatypes <> nat ind
+R716:724 Assignment06_07 <> top_not_x ind
+R728:729 Poly <> ::'['_']' not
+R726:726 Assignment06_07 <> n var
+R756:758 Coq.Init.Datatypes <> nat ind
+R764:766 Coq.Init.Datatypes <> nat ind
+R772:775 Poly <> list ind
+R777:779 Coq.Init.Datatypes <> nat ind
+R793:801 Assignment06_07 <> top_not_x ind
+R807:810 Poly <> ::x_'::'_x not
+R806:806 Assignment06_07 <> m var
+R811:811 Assignment06_07 <> l var
+R803:803 Assignment06_07 <> n var
+R784:787 Logic <> :type_scope:x_'<>'_x not
+R783:783 Assignment06_07 <> n var
+R788:788 Assignment06_07 <> m var
+ind 828:836 <> nostutter
+constr 864:875 <> tutter_empty
+constr 896:905 <> tutter_top
+R840:843 Poly <> list ind
+R845:847 Coq.Init.Datatypes <> nat ind
+R879:887 Assignment06_07 <> nostutter ind
+R889:890 Poly <> ::'['_']' not
+R920:922 Coq.Init.Datatypes <> nat ind
+R928:931 Poly <> list ind
+R933:935 Coq.Init.Datatypes <> nat ind
+R971:979 Assignment06_07 <> nostutter ind
+R983:984 Poly <> ::x_'::'_x not
+R982:982 Assignment06_07 <> n var
+R985:985 Assignment06_07 <> l var
+R952:955 Logic <> :type_scope:x_'/\'_x not
+R939:947 Assignment06_07 <> top_not_x ind
+R951:951 Assignment06_07 <> l var
+R949:949 Assignment06_07 <> n var
+R956:964 Assignment06_07 <> nostutter ind
+R966:966 Assignment06_07 <> l var
+def 1610:1625 <> test_nostutter_1
+R1633:1641 Assignment06_07 <> nostutter ind
+R1643:1643 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R1645:1645 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R1647:1647 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R1649:1649 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R1651:1651 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R1653:1653 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R1655:1655 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R1695:1707 Logic <> beq_nat_false prfax
+R1695:1707 Logic <> beq_nat_false prfax
+R1724:1736 Logic <> beq_nat_false prfax
+R1724:1736 Logic <> beq_nat_false prfax
+R1753:1765 Logic <> beq_nat_false prfax
+R1753:1765 Logic <> beq_nat_false prfax
+R1782:1794 Logic <> beq_nat_false prfax
+R1782:1794 Logic <> beq_nat_false prfax
+R1811:1823 Logic <> beq_nat_false prfax
+R1811:1823 Logic <> beq_nat_false prfax
+def 1850:1865 <> test_nostutter_2
+R1869:1877 Assignment06_07 <> nostutter ind
+R1879:1880 Poly <> ::'['_']' not
+R1916:1928 Logic <> beq_nat_false prfax
+def 1952:1967 <> test_nostutter_3
+R1971:1979 Assignment06_07 <> nostutter ind
+R1981:1981 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R1983:1983 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R2021:2033 Logic <> beq_nat_false prfax
+def 2056:2071 <> test_nostutter_4
+R2079:2081 Logic <> not def
+R2084:2092 Assignment06_07 <> nostutter ind
+R2094:2094 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R2096:2096 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R2098:2098 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R2100:2100 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R2102:2102 Poly <> ::'['_x_';'_'..'_';'_x_']' not
+R2122:2124 Logic <> not def

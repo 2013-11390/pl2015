@@ -1,0 +1,38 @@
+DIGEST d246b2afb031221f392815dab5dd5f7d
+FAssignment06_00
+ind 489:490 <> ex
+constr 527:534 <> ex_intro
+R506:506 Assignment06_00 <> X var
+R567:573 Assignment06_00 <> witness var
+R577:578 Assignment06_00 <> ex ind
+R616:617 Assignment06_00 <> ex ind
+not 595 <> :type_scope:'exists'_x_','_x
+R730:731 Assignment06_00 <> ex ind
+not 705 <> :type_scope:'exists'_x_':'_x_','_x
+prf 821:830 <> eq_nat_dec
+R847:849 Coq.Init.Datatypes <> nat ind
+R852:852 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R858:862 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R869:869 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R854:856 Coq.Init.Logic <> :type_scope:x_'='_x not
+R853:853 Assignment06_00 <> n var
+R857:857 Assignment06_00 <> m var
+R864:867 Logic <> :type_scope:x_'<>'_x not
+R863:863 Assignment06_00 <> n var
+R868:868 Assignment06_00 <> m var
+R1320:1326 MoreCoq <> f_equal thm
+R1320:1326 MoreCoq <> f_equal thm
+def 1435:1443 <> override'
+R1464:1464 Assignment06_00 <> X var
+R1459:1461 Coq.Init.Datatypes <> nat ind
+R1470:1472 Coq.Init.Datatypes <> nat ind
+R1478:1478 Assignment06_00 <> X var
+R1488:1488 Assignment06_00 <> X var
+R1483:1485 Coq.Init.Datatypes <> nat ind
+R1502:1504 Coq.Init.Datatypes <> nat ind
+R1513:1522 Assignment06_00 <> eq_nat_dec thm
+R1526:1527 Assignment06_00 <> k' var
+R1524:1524 Assignment06_00 <> k var
+R1541:1541 Assignment06_00 <> f var
+R1543:1544 Assignment06_00 <> k' var
+R1534:1534 Assignment06_00 <> x var

@@ -1,0 +1,26 @@
+DIGEST 4fde73fbb4f134c3cede166f25b360b0
+FAssignment06_02
+R15:29 Assignment06_01 <> <> lib
+prf 233:247 <> not_exists_dist
+R295:295 Assignment06_02 <> X var
+R345:345 Assignment06_02 <> P var
+R347:347 Assignment06_02 <> x var
+R311:313 Logic <> :type_scope:'~'_x not
+R329:329 Logic <> :type_scope:'~'_x not
+R314:320 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R322:323 Assignment06_00 <> :type_scope:'exists'_x_','_x not
+R324:325 Logic <> :type_scope:'~'_x not
+R326:326 Assignment06_02 <> P var
+R253:267 Logic <> excluded_middle def
+R367:369 Logic <> not def
+R391:405 Logic <> excluded_middle def
+R423:423 Logic <> :type_scope:x_'\/'_x not
+R427:432 Logic <> :type_scope:x_'\/'_x not
+R447:447 Logic <> :type_scope:x_'\/'_x not
+R442:446 Logic <> False ind
+R423:423 Logic <> :type_scope:x_'\/'_x not
+R427:432 Logic <> :type_scope:x_'\/'_x not
+R447:447 Logic <> :type_scope:x_'\/'_x not
+R442:446 Logic <> False ind
+R520:537 Logic <> ex_falso_quodlibet thm
+R520:537 Logic <> ex_falso_quodlibet thm

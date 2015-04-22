@@ -1,0 +1,55 @@
+DIGEST 077bb5813e30bcc97256453870074512
+FAssignment06_05
+R15:29 Assignment06_04 <> <> lib
+R318:320 Coq.Init.Logic <> all def
+ind 334:336 <> all
+constr 389:395 <> all_nil
+constr 413:420 <> all_cons
+R354:354 Assignment06_05 <> X var
+R367:370 Poly <> list ind
+R399:401 Assignment06_05 <> all ind
+R405:407 Poly <> nil constr
+R454:456 Assignment06_05 <> all ind
+R462:465 Poly <> ::x_'::'_x not
+R461:461 Assignment06_05 <> x var
+R466:466 Assignment06_05 <> l var
+R443:445 Assignment06_05 <> all ind
+R449:449 Assignment06_05 <> l var
+R438:438 Assignment06_05 <> x var
+def 585:591 <> forallb
+R617:620 Basics <> bool ind
+R612:612 Assignment06_05 <> X var
+R628:631 Poly <> list ind
+R633:633 Assignment06_05 <> X var
+R638:641 Basics <> bool ind
+R654:654 Assignment06_05 <> l var
+R667:668 Poly <> ::'['_']' not
+R673:676 Basics <> true constr
+R685:688 Poly <> ::x_'::'_x not
+R695:698 Basics <> andb def
+R710:716 Assignment06_05 <> forallb def
+R718:721 Assignment06_05 <> test var
+R701:704 Assignment06_05 <> test var
+prf 1046:1060 <> forallb_correct
+R1081:1084 Basics <> bool ind
+R1076:1076 Assignment06_05 <> X var
+R1110:1114 Logic <> :type_scope:x_'<->'_x not
+R1103:1105 Coq.Init.Logic <> :type_scope:x_'='_x not
+R1092:1098 Assignment06_05 <> forallb def
+R1102:1102 Assignment06_05 <> l var
+R1100:1100 Assignment06_05 <> P var
+R1106:1109 Basics <> true constr
+R1115:1117 Assignment06_05 <> all ind
+R1141:1141 Assignment06_05 <> l var
+R1132:1134 Coq.Init.Logic <> :type_scope:x_'='_x not
+R1129:1129 Assignment06_05 <> P var
+R1131:1131 Assignment06_05 <> x var
+R1135:1138 Basics <> true constr
+R1193:1199 Assignment06_05 <> all_nil constr
+R1193:1199 Assignment06_05 <> all_nil constr
+R1210:1217 Assignment06_05 <> all_cons constr
+R1210:1217 Assignment06_05 <> all_cons constr
+R1242:1250 Logic <> andb_prop thm
+R1242:1250 Logic <> andb_prop thm
+R1321:1329 Logic <> andb_prop thm
+R1321:1329 Logic <> andb_prop thm

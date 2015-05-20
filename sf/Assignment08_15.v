@@ -32,7 +32,36 @@ Proof.
       apply trans_cequiv with c2; try assumption.
       apply IFB_false; assumption.
   Case "WHILE".
-    exact FILL_IN_HERE.
+     assert (bequiv b (fold_constants_bexp b)).
+      SCase "Pf of assertion". apply fold_constants_bexp_sound.
+    remember (fold_constants_bexp b) as b'.
+    destruct b';
+      try (apply CWhile_congruence; assumption).
+    SCase "b alwas true".
+      apply WHILE_true.
+      assumption.
+    SCase "b alwas false".
+    Lemma WHILE_false : forall b c,
+     bequiv b BFalse ->
+     cequiv
+       (WHILE b DO c END)
+       SKIP.
+       Proof.
+       intros b c Hb. split; intros H.
+       Case "->".
+       inversion H; subst.
+       SCase "E_WhileEnd".
+       apply E_Skip.
+       SCase "E_WhileLoop".
+       rewrite Hb in H2. inversion H2.
+       Case "<-".
+       inversion H; subst.
+       apply E_WhileEnd.
+       rewrite Hb.
+       reflexivity.
+       Qed.
+      apply WHILE_false.
+      assumption.
 Qed.
 
 (*-- Check --*)

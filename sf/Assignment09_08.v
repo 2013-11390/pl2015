@@ -50,6 +50,12 @@ Proof.
     apply ex_falso_quodlibet. apply H. omega.
 Qed.
 
+Definition find_parity_invariant x := 
+  fun st => 
+     st X <= x /\ ((st Y = 0 /\ ev (x - st X))
+                    \/ (st Y = 1 /\ ~ev (x - st X))). 
+
+
 Theorem parity_correct : forall m,
     {{ fun st => st X = m }}
   WHILE BLe (ANum 2) (AId X) DO
@@ -57,9 +63,29 @@ Theorem parity_correct : forall m,
   END
     {{ fun st => st X = parity m }}.
 Proof.
-  exact FILL_IN_HERE.
+  intros.
+  eapply hoare_consequence_post.
+  apply hoare_consequence_pre with (fun st => parity (st X) = parity m).
+  apply hoare_while.
+  eapply hoare_consequence_pre.
+  apply hoare_asgn.
+  intros st [H1 H2].
+  unfold assn_sub. simpl. rewrite update_eq.
+  rewrite parity_ge_2. assumption. 
+  apply ble_nat_true. apply H2.
+  intros st H; rewrite H; reflexivity.
+  intros st [H1 H2]. symmetry. rewrite <- parity_lt_2.
+  symmetry. assumption.
+  unfold not.
+  intros.
+  unfold beval in H2.
+  unfold aeval in H2.
+  apply ble_nat_false in H2.
+  rewrite <- H in H2.
+  unfold not in H2.
+  apply H2.
+  reflexivity.
 Qed.
-
 (*-- Check --*)
 Check parity_correct : forall m,
     {{ fun st => st X = m }}

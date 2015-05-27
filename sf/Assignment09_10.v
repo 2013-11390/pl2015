@@ -49,6 +49,12 @@ Require Export Assignment09_09.
     {{ Z = a + b + c }}
 *)
 
+Definition add_slowly : com :=
+  WHILE BNot (BEq (AId X) (ANum 0)) DO
+    Z ::= APlus (AId Z) (ANum 1);;
+    X ::= AMinus (AId X) (ANum 1)
+  END.
+
 Theorem add_three_numbers_correct: forall a b c,
   {{ fun st => True }}                                   
   X ::= ANum 0;;
@@ -64,7 +70,110 @@ Theorem add_three_numbers_correct: forall a b c,
   END
   {{ fun st => st Z = a + b + c }}.
 Proof.
-  exact FILL_IN_HERE.
+  intros.
+  eapply hoare_consequence_pre with (P' := fun st : state => c = 0+0+c).
+  eapply hoare_seq with (Q := fun st : state => c = st X + 0 + c).
+  eapply hoare_seq with (Q := fun st : state => c = st X + st Y + c).
+  eapply hoare_seq with (Q := fun st : state => st Z = st X + st Y + c).
+  eapply hoare_seq with (Q := fun st : state => st Z = a + st Y + c).
+  eapply hoare_consequence_post.
+  eapply hoare_while.
+  eapply hoare_consequence_pre with (P' := fun st : state => st Z + 1 = a + st Y + 1 +c).
+  eapply hoare_seq with (Q := fun st : state => st Z + 1 = a + st Y + c).
+  eapply hoare_consequence_pre. 
+  apply hoare_asgn.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  simpl.
+  intros.
+  omega.
+  eapply hoare_consequence_pre.
+  apply hoare_asgn.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  simpl.
+  intros.
+  omega.
+  unfold assert_implies.
+  simpl.
+  intros.
+  induction H.
+  eapply negb_true in H0.
+  eapply beq_nat_false in H0.
+  rewrite H.
+  omega.
+  unfold assert_implies.
+  simpl.
+  intros.
+  induction H.
+  eapply negb_false in H0.
+  eapply beq_nat_true in H0.
+  rewrite H.
+  omega.
+  eapply hoare_consequence_post.
+  eapply hoare_while.
+  eapply hoare_consequence_pre with (P' := fun st : state => st Z + 1 = st X + 1 + st Y + c).
+  eapply hoare_seq with (Q := fun st : state => st Z + 1 = st X + st Y + c).
+  eapply hoare_consequence_pre.
+  eapply hoare_asgn.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  simpl.
+  intros.
+  omega.
+  eapply hoare_consequence_pre.
+  eapply hoare_asgn.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  simpl.
+  intros.
+  omega.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  simpl.
+  intros.
+  omega.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  simpl.
+  intros.
+  induction H.
+  eapply negb_false in H0.
+  eapply beq_nat_true in H0.
+  omega.
+  eapply hoare_consequence_pre.
+  eapply hoare_asgn.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  intros.
+  simpl.
+  eapply H.
+  eapply hoare_consequence_pre.
+  apply hoare_asgn.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  intros.
+  simpl.
+  eapply H.
+  eapply hoare_consequence_pre.
+  eapply hoare_asgn.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  intros.
+  simpl.
+  eapply H.
+  unfold assert_implies.
+  intros.
+  omega.
 Qed.
 
 (*-- Check --*)

@@ -23,9 +23,50 @@ Theorem slow_addition_dec_correct : forall n m,
   END
   {{fun st => st Y = n + m}}.
 Proof.
-  exact FILL_IN_HERE.
+  intros.
+  eapply hoare_consequence_pre with (P' := fun st : state => st X + st Y = n+m).
+  eapply hoare_consequence_post. 
+  eapply hoare_while.
+  eapply hoare_consequence_pre with (P' := fun st : state => st X-1 + st Y+1 = n+m).
+  eapply hoare_seq with(Q := fun st : state => st X-1 + st Y = n+m).
+  eapply hoare_consequence_pre.
+  eapply hoare_asgn.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  intros. 
+  simpl.
+  apply H.
+  eapply hoare_consequence_pre.
+  eapply hoare_asgn.
+  unfold assn_sub.
+  unfold update.
+  unfold assert_implies.
+  intros. 
+  simpl.
+  omega.
+  unfold assert_implies.
+  intros.
+  induction H.
+  simpl in H0.
+  eapply negb_true in H0.
+  eapply beq_nat_false in H0.
+  omega.
+  unfold assert_implies.
+  intros.
+  induction H.
+  simpl in H0.
+  eapply negb_false in H0.
+  eapply beq_nat_true in H0.
+  omega.
+  unfold assert_implies.
+  intros.
+  induction H.
+  simpl in H0.
+  rewrite H.
+  rewrite H0.
+  reflexivity.
 Qed.
-
 (*-- Check --*)
 Check slow_addition_dec_correct : forall n m,
   {{fun st => st X = n /\ st Y = m }}

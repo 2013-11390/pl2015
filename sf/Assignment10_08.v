@@ -34,7 +34,37 @@ Require Export Assignment10_07.
 Theorem eval__multistep : forall t n,
   t || n -> t ==>* C n.
 Proof.
-  exact FILL_IN_HERE.
+  intros t.
+  induction t.
+  intros.
+  inversion H.
+  apply multi_refl.
+  intros.
+  inversion H; subst.
+  eapply multi_trans.
+  Lemma multistep_congr_1 : forall t1 t1' t2,
+     t1 ==>* t1' ->
+     P t1 t2 ==>* P t1' t2.
+  Proof.
+    intros.
+    multi_cases (induction H) Case.
+    apply multi_refl. 
+    apply multi_step with (P y t2). 
+    apply ST_Plus1.
+    apply H. 
+    apply IHmulti.
+  Qed.
+  eapply multistep_congr_1.
+  eapply IHt1.
+  eapply H2.
+  eapply multi_trans.
+  eapply multistep_congr_2.
+  constructor.
+  eapply IHt2.
+  eapply H4.
+  eapply multi_step.
+  eapply ST_PlusConstConst.
+  eapply multi_refl.
 Qed.
 
 (*-- Check --*)

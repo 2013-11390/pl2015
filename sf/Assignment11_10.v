@@ -6,21 +6,57 @@ Require Export Assignment11_09.
 **)
 
 Fixpoint tycheck (t: tm) (T: ty) : bool :=
-  FILL_IN_HERE.
+  match t with
+  |ttrue => 
+    match T with
+    | TBool => true
+    | TNat => false
+    end
+  |tfalse => 
+    match T with
+    | TBool => true
+    | TNat => false
+    end
+  |tif t1 t2 t3 => andb (andb (tycheck t1 TBool) (tycheck t2 T)) (tycheck t3 T)
+  |tzero =>  
+    match T with
+    | TBool => false
+    | TNat => true
+    end
+  |tsucc t => 
+    match T with
+    | TBool => false
+    | TNat => tycheck t T
+    end
+  |tpred t => 
+    match T with
+    | TBool => false
+    | TNat => tycheck t T
+    end
+  |tiszero t =>
+    match T with
+    | TBool => tycheck t TNat
+    | TNat => false
+    end
+end.
 
 Example tycheck_ex1:
   tycheck
     (tif (tiszero (tpred (tsucc (tsucc tzero)))) ttrue (tiszero (tsucc tzero))) 
     TBool 
   = true.
-Proof. exact FILL_IN_HERE. Qed.
+Proof. 
+  auto.
+Qed.
 
 Example tycheck_ex2:
   tycheck
     (tif (tiszero (tpred (tsucc (tsucc tzero)))) tzero (tiszero (tsucc tzero))) 
     TBool 
   = false.
-Proof. exact FILL_IN_HERE. Qed.
+Proof.
+  eauto.
+Qed.
 
 (** Prove that the type checking function [tyeq: tm -> ty -> bool] is correct.
 
@@ -33,14 +69,41 @@ Theorem tycheck_correct1: forall t T
     (TYCHK: tycheck t T = true),
   |- t \in T.
 Proof.
-  exact FILL_IN_HERE.
+  induction t; intros; destruct T; auto; try inversion TYCHK.
+  inversion TYCHK.
+  eapply andb_prop in H0.
+  destruct H0.
+  eapply andb_prop in H.
+  destruct H.
+  eauto.
+  inversion TYCHK.
+  eapply andb_prop in H0.
+  destruct H0.
+  eapply andb_prop in H.
+  destruct H.
+  eauto.
 Qed.
 
 Theorem tycheck_correct2: forall t T
     (HASTY: |- t \in T),
   tycheck t T = true.
 Proof.
-  exact FILL_IN_HERE.
+  induction t; intros; destruct T; eauto; try inversion HASTY.
+  inversion HASTY; subst.
+  simpl.
+  eapply andb_true_intro; split; eauto; eapply andb_true_intro; split; eauto.
+  inversion HASTY; subst.
+  simpl.
+  eapply andb_true_intro; split; eauto; eapply andb_true_intro; split; eauto.
+  simpl.
+  inversion HASTY; subst.
+  eauto.
+  simpl.
+  inversion HASTY; subst.
+  eauto.
+  simpl.
+  inversion HASTY; subst.
+  eauto.
 Qed.
 
 (*-- Check --*)

@@ -28,11 +28,39 @@ Proof with auto.
     SCase "t1 can take a step".
       inversion H as [t1' H1].
       exists (tif t1' t2 t3)...
-      exact FILL_IN_HERE.
+  Case "T_Succ".
+    inversion IHHT.
+    inversion H; subst.
+    inversion H0; subst; inversion HT; subst.
+    induction H0.
+    left. eauto.
+    left. eauto.
+    right.
+    destruct H.
+    exists (tsucc x). apply ST_Succ.
+    assumption.
   Case "T_Pred".
-    exact FILL_IN_HERE.
+     inversion IHHT.
+     SCase "t1 is a value". inversion H; subst.
+      SSCase "t1 is a bvalue". inversion H0; subst; inversion HT; subst.
+      SSCase "t1 is a nvalue". induction H0.
+        SSSCase "t1 is tzero".
+          right. exists tzero. apply ST_PredZero.
+        SSSCase "t1 is tssuc t".
+          right. exists t. apply ST_PredSucc. assumption.
+      SCase "t1 can take a step". destruct H.
+        right. exists (tpred x). auto.
   Case "T_Iszero".
-    exact FILL_IN_HERE.
+    inversion IHHT.
+     SCase "t1 is a value". inversion H; subst. 
+         SSCase "t1 is a bvalue". inversion H0; subst; inversion HT; subst.
+         SSCase "t1 is a nvalue". inversion H0; subst.
+           SSSCase "t1 is tzero".
+             right. exists ttrue. auto.
+           SSSCase "t1 is succ t' ".
+             right. exists tfalse. auto.
+      SCase "t1 can take a step".
+        right. destruct H. exists (tiszero x). auto.
 Qed.
 
 (*-- Check --*)

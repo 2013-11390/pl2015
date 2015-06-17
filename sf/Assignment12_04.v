@@ -1,13 +1,22 @@
 Require Export Assignment12_03.
 
 (* problem #04: 10 points *)
-
 Corollary soundness : forall t t' T,
   empty |- t \in T -> 
   t ==>* t' ->
   ~(stuck t').
 Proof.
-  exact FILL_IN_HERE.
+  intros t t' T Hhas_type Hmulti. unfold stuck.
+  intros [Hnf Hnot_val]. unfold normal_form in Hnf.
+  induction Hmulti.
+  assert (value x \/ exists t', x==> t').
+    eapply progress.
+    eauto.
+  inversion Hhas_type; subst; try (eauto); try(inversion H; eauto).
+  eapply IHHmulti; eauto.
+  eapply preservation.
+  eapply Hhas_type.
+  eapply H.
 Qed.
 
 (*-- Check --*)
